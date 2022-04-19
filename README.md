@@ -11,7 +11,7 @@ catコマンドでは，csvファイルの内容も手軽に確認できる．�
 ### CLU help message
 
 ```sh
-cutcat [OPTIONS] <FILE...>
+cutcat [OPTIONS] <FILE>
 OPTIONS
     -c, --column          列名を指定する
     -n, --column-number   列番号を指定する

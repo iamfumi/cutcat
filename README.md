@@ -13,15 +13,18 @@ catコマンドでは，csvファイルの内容も手軽に確認できる．�
 ```sh
 cutcat [OPTIONS] <FILE...>
 OPTIONS
-    -h, --help            このメッセージを表示する
-    -c, --column          列番号を指定する
+    -c, --column          列名を指定する
+    -n, --column-number   列番号を指定する
     -t, --tab             入力ファイルがタブ区切りのcsvファイルの場合に指定する
+    -h, --help            このメッセージを表示する
+
+ARGUMENTS
+    FILE                  中身の確認を行うcsvファイル
+    
 ```
 
 ### Examples
 
 ```sh
-$ cutcat file.csv                     
-ID,  
-
+$ cutcat file.csv
 ```

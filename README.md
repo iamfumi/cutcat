@@ -10,13 +10,13 @@ catコマンドでは，csvファイルの内容も手軽に確認できる．�
 
 ### CLU help message
 
-'''sh
-cutcat [OPTIONS] [FILEs...]
+```sh
+cutcat [OPTIONS] <FILE...>
 OPTIONS
     -h, --help            このメッセージを表示する
     -c, --column          列番号を指定する
     -t, --tab             入力ファイルがタブ区切りのcsvファイルの場合に指定する
-'''
+```
 
 ### Examples
 

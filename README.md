@@ -17,7 +17,7 @@ OPTIONS
     -t, --tab             入力ファイルがタブ区切りのcsvファイルの場合に指定する
     -h, --help            このメッセージを表示する
 
-FILE
+ARGUMENTS
     FILE                  対象となるcsvファイルのパス
     
 ```

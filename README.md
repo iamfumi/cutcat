@@ -1,5 +1,6 @@
 # cutcat
 csvファイルの列を操作するためのcatコマンド機能拡張
+![cutcat_logo](logo.png)
 
 ## Description
 catコマンドでは，csvファイルの内容も手軽に確認できる．また，cutコマンドではcsvファイルにおける指定した列を取り出すことができる．

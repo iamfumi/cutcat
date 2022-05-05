@@ -25,5 +25,21 @@ ARGUMENTS
 ### Examples
 
 ```sh
-$ cutcat file.csv
+$ cutcat SalesData.csv
+Products Name, 2017, 2018, 2019, 2020, 2021
+A, 35000, 38000, 46000, 12000, 36000
+B, 9000, 20000, 23100, 54300, 12000
+C, 42300, 54300, 43200, 89100, 123200
+
+$ cutcat -c "Products Name", "2021" SalesData.csv
+Products Name, 2021
+A, 36000
+B, 12000
+C, 123200
+
+$ cutcat -n 0,4,5 SalesData.csv
+Products Name, 2020, 2021
+A, 12000, 36000
+B, 54300, 12000
+C, 89100, 123200
 ```

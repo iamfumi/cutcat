@@ -9,21 +9,18 @@ use clap::Parser;
     about = "csvファイルの列を操作するためのcatコマンド機能拡張"
 )]
 struct Options {
-    /// Name of the person to greet
-    // #[clap(short, long)]
-    // name: String,
-
-    // /// Number of times to greet
-    // #[clap(short, long, default_value_t = 1)]
-    // count: u8,
 
     /// Select Column Name
-    #[clap(short, long, value_name = "column-Name")]
-    column: Option<String>,
+    #[clap(short='c', long="column", value_name = "column-Name")]
+    column: Vec<String>,
 
     /// Select Column Number
-    #[clap(short, long, value_name = "column-Number")]
-    number: Option<u8>,   
+    #[clap(short='n', long="number", value_name = "column-Number")]
+    number: Vec<u8>,
+
+    /// Tab delimited csv file
+    #[clap(short='t', long="tab")]
+    tab: bool,
 
     /// Input CSV file
     #[clap(value_name = "File", required = true, help = "対象となるCSVファイルのパス")]
@@ -31,9 +28,5 @@ struct Options {
 }
 
 fn main() {
-    let opts = Options::parse();
-
-    // for _ in 0..args.count {
-    //     println!("Hello {}!", args.name)
-    // }
+    let _opts = Options::parse();
 }

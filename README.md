@@ -1,5 +1,6 @@
 # cutcat
 [![Coverage Status](https://coveralls.io/repos/github/iamfumi/cutcat/badge.svg?branch=main)](https://coveralls.io/github/iamfumi/cutcat?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/iamfumi/cutcat/badge.svg?branch=coverage)](https://coveralls.io/github/iamfumi/cutcat?branch=coverage)
 
 csvファイルの列を操作するためのcatコマンド機能拡張
 ![cutcat_logo](logo.png)

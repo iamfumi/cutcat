@@ -1,4 +1,5 @@
 use clap::Parser;
+use std::path::PathBuf;
 
 ///csvファイルの列を操作するためのcatコマンド機能拡張 
 #[derive(Parser)]
@@ -24,9 +25,28 @@ struct Options {
 
     /// Input CSV file
     #[clap(value_name = "File", required = true, help = "対象となるCSVファイルのパス")]
-    file: Vec<String>,
+    file: Vec<PathBuf>,
 }
 
 fn main() {
     let _opts = Options::parse();
+}
+
+fn hello(name: Option<String>) -> String {
+    return format!("Hello, {}", if let Some(n) = name {
+        n
+    } else {
+        "World".to_string()
+    })
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_basic() {
+        assert_eq!("Hello, World", hello(None));
+        assert_eq!("Hello, Yamaguchi", hello(Some("Yamaguchi".to_string())));
+    }
 }

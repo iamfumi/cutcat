@@ -7,9 +7,10 @@ use std::fs;
 #[clap(
     name = "cutcat",
     author = "Fumiya YAMAGUCHI",
-    version = "0.1.1",
+    version = "0.1.2",
     about = "csvファイルの列を操作するためのcatコマンド機能拡張"
 )]
+
 struct Options {
 
     /// Select Column Name
@@ -29,16 +30,47 @@ struct Options {
     file: PathBuf,
 }
 
+fn readfile(path_buf: PathBuf) -> String {
+    return fs::read_to_string(path_buf).unwrap();
+}
+
+fn textsplit(text: &str) -> Vec<&str> {
+    let line :Vec<&str> = text.split('\n').collect();
+    let mut one: Vec<&str> = vec![];
+    for x in line{
+        // println!("{}", x);
+        let split_line :Vec<&str> = x.split(',').collect();
+        for splited in split_line{
+            one.push(splited);
+        }
+    }
+    return one;
+}
+
+// fn rowsplit(csvdata: &str, num: u8) -> Vec<&str> {
+
+// }
+
 fn main() {
     let _opts = Options::parse();
     //let path_buf = PathBuf::from("testdata.csv");
     let path_buf = _opts.file;
     let csvtext = readfile(path_buf);
     println!("{}",csvtext);
-}
+    let str2: &str = &csvtext;
+    // println!("{}", str2);
+    let test_string :Vec<&str> = textsplit(str2);
+    // println!("{},{}",test_string[0],test_string[1]);
 
-fn readfile(path_buf: PathBuf) -> String {
-    return fs::read_to_string(path_buf).unwrap();
+    for z in test_string{
+        println!("{}", z);
+    }
+
+    // let row :Vec<&str> = rowsplit(str2, 1);
+    // println!("{},{}",row[0],row[1]);
+
+    // let column :Vec<String> = _opts.column;
+    // println!("{}",column[0]);
 }
 
 fn hello(name: Option<String>) -> String {

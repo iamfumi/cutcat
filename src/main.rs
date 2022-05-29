@@ -19,7 +19,7 @@ struct Options {
 
     /// Select Column Number
     #[clap(short='n', long="number", value_name = "column-Number...")]
-    number: Vec<u8>,
+    number: Vec<usize>,
 
     /// Tab delimited csv file
     #[clap(short='t', long="tab")]
@@ -47,30 +47,64 @@ fn textsplit(text: &str) -> Vec<&str> {
     return one;
 }
 
-// fn rowsplit(csvdata: &str, num: u8) -> Vec<&str> {
+fn returnline(text: &str) -> Vec<&str> {
+    let line :Vec<&str> = text.split('\n').collect();
+    return line;
+}
+
+// fn getcolmun(text: &str) -> Vec<&str> {
 
 // }
+
+fn rowsplit(line:&str) -> Vec<&str> {
+    let word :Vec<&str> = line.split(',').collect();
+    return word;
+}
+
+fn cleateresult(lines: Vec<&str>, number:Vec<usize>) -> String{
+    let mut result = String::from("");
+    for line in lines{
+        let ones :Vec<&str>= rowsplit(line);
+        for n in &number{
+            result = result + ones[*n];
+        }
+        result = result + "\n";
+        // println!("{}",line);
+    }
+    return result;
+}
 
 fn main() {
     let _opts = Options::parse();
     //let path_buf = PathBuf::from("testdata.csv");
     let path_buf = _opts.file;
     let csvtext = readfile(path_buf);
-    println!("{}",csvtext);
+    // println!("{}",csvtext);
     let str2: &str = &csvtext;
     // println!("{}", str2);
-    let test_string :Vec<&str> = textsplit(str2);
+    let allsplited :Vec<&str> = textsplit(str2);
     // println!("{},{}",test_string[0],test_string[1]);
 
-    for z in test_string{
-        println!("{}", z);
-    }
+    // for z in allsplited{
+    //     println!("{}", z);
+    // }
 
     // let row :Vec<&str> = rowsplit(str2, 1);
     // println!("{},{}",row[0],row[1]);
 
-    // let column :Vec<String> = _opts.column;
-    // println!("{}",column[0]);
+    let column :Vec<String> = _opts.column;
+    // if column.len()==0{
+    //     println!("{}","None");
+    // }else{
+    //     for x in column{
+    //         println!("{}",x);
+    //     }
+    // }
+    let lines :Vec<&str> = returnline(str2);
+    let number :Vec<usize> = _opts.number;
+    let result = cleateresult(lines, number);
+    println!("{}",result);
+    
 }
 
 fn hello(name: Option<String>) -> String {

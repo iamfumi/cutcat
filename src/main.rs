@@ -137,15 +137,10 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_basic() {
-        assert_eq!("Hello, World", hello(None));
-        assert_eq!("Hello, Yamaguchi", hello(Some("Yamaguchi".to_string())));
-    }
-    fn test_file() {
-        let _opts = Options::parse();
-        let path_buf = _opts.file;
-        assert_eq!("Products Name, 2017, 2018, 2019, 2020, 2021\nA, 35000, 38000, 46000, 12000, 36000\nB, 9000, 20000, 23100, 54300, 12000\nC, 42300, 54300, 43200, 89100, 123200",readfile(path_buf));
-    }
+    // fn test_basic() {
+    //     assert_eq!("Hello, World", hello(None));
+    //     assert_eq!("Hello, Yamaguchi", hello(Some("Yamaguchi".to_string())));
+    // }
     fn test_rowsplit(){
         let testnum: &str = "1,2";
         let teststr: &str = "c,d";

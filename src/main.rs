@@ -14,11 +14,11 @@ use std::fs;
 struct Options {
 
     /// Select Column Name
-    #[clap(short='c', long="column", value_name = "column-Name...")]
+    #[clap(short='c', long="column", value_name = "column-Name")]
     column: Vec<String>,
 
     /// Select Column Number
-    #[clap(short='n', long="number", value_name = "column-Number...")]
+    #[clap(short='n', long="number", value_name = "column-Number")]
     number: Vec<usize>,
 
     /// Tab delimited csv file
@@ -63,12 +63,23 @@ fn rowsplit(line:&str) -> Vec<&str> {
 
 fn cleateresult(lines: Vec<&str>, number:Vec<usize>) -> String{
     let mut result = String::from("");
+    let ll = lines.len();
+    let mut cl = 0;
     for line in lines{
         let ones :Vec<&str>= rowsplit(line);
+        let wl = line.len();
+        let mut cw = 0;
         for n in &number{
+            cw+=1;
             result = result + ones[*n];
+            if wl != cw{
+                result = result+",";
+            }
         }
-        result = result + "\n";
+        cl+=1;
+        if cl!=ll {
+            result = result + "\n";
+        }
         // println!("{}",line);
     }
     return result;
@@ -102,9 +113,15 @@ fn main() {
     // }
     let lines :Vec<&str> = returnline(str2);
     let number :Vec<usize> = _opts.number;
-    let result = cleateresult(lines, number);
+    let result;
+    if number.len() !=0 {
+        result = cleateresult(lines, number);
+    }else{
+        result = csvtext;
+    }
+
     println!("{}",result);
-    
+
 }
 
 fn hello(name: Option<String>) -> String {
@@ -123,5 +140,20 @@ mod tests {
     fn test_basic() {
         assert_eq!("Hello, World", hello(None));
         assert_eq!("Hello, Yamaguchi", hello(Some("Yamaguchi".to_string())));
+    }
+    fn test_file() {
+        let _opts = Options::parse();
+        let path_buf = _opts.file;
+        assert_eq!("Products Name, 2017, 2018, 2019, 2020, 2021\nA, 35000, 38000, 46000, 12000, 36000\nB, 9000, 20000, 23100, 54300, 12000\nC, 42300, 54300, 43200, 89100, 123200",readfile(path_buf));
+    }
+    fn test_rowsplit(){
+        let testnum: &str = "1,2";
+        let teststr: &str = "c,d";
+        let a: &str = "1";
+        let b: &str = "2";
+        let c: &str = "c";
+        let d: &str = "d";
+        assert_eq!(vec![a,b], rowsplit(testnum));
+        assert_eq!(vec![c,d], rowsplit(teststr));
     }
 }

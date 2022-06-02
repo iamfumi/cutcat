@@ -61,13 +61,12 @@ fn rowsplit(line:&str) -> Vec<&str> {
     return word;
 }
 
-fn cleateresult(lines: Vec<&str>, number:Vec<usize>) -> String{
-    let mut result = String::from("");
+fn cleateresult(mut result:String, lines: Vec<&str>, number:Vec<usize>) -> String{
     let ll = lines.len();
     let mut cl = 0;
     for line in lines{
         let ones :Vec<&str>= rowsplit(line);
-        let wl = line.len();
+        let wl = number.len();
         let mut cw = 0;
         for n in &number{
             cw+=1;
@@ -83,6 +82,10 @@ fn cleateresult(lines: Vec<&str>, number:Vec<usize>) -> String{
         // println!("{}",line);
     }
     return result;
+}
+
+fn collectnum(number:Vec<usize>, column:Vec<String>) -> Vec<usize>{
+    return number;
 }
 
 fn main() {
@@ -112,10 +115,16 @@ fn main() {
     //     }
     // }
     let lines :Vec<&str> = returnline(str2);
-    let number :Vec<usize> = _opts.number;
-    let result;
+    let mut number :Vec<usize> = _opts.number;
+    
+    
+    let mut result:String = String::from("");
+    if column.len() !=0 {
+        number = collectnum(number, column)
+        //number.push(0);
+    }
     if number.len() !=0 {
-        result = cleateresult(lines, number);
+        result = cleateresult(result, lines, number);
     }else{
         result = csvtext;
     }
@@ -137,10 +146,10 @@ mod tests {
     use super::*;
 
     #[test]
-    // fn test_basic() {
-    //     assert_eq!("Hello, World", hello(None));
-    //     assert_eq!("Hello, Yamaguchi", hello(Some("Yamaguchi".to_string())));
-    // }
+    fn test_basic() {
+        assert_eq!("Hello, World", hello(None));
+        assert_eq!("Hello, Yamaguchi", hello(Some("Yamaguchi".to_string())));
+    }
     fn test_rowsplit(){
         let testnum: &str = "1,2";
         let teststr: &str = "c,d";

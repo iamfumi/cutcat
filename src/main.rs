@@ -84,7 +84,17 @@ fn cleateresult(mut result:String, lines: Vec<&str>, number:Vec<usize>) -> Strin
     return result;
 }
 
-fn collectnum(number:Vec<usize>, column:Vec<String>) -> Vec<usize>{
+fn collectnum(mut number:Vec<usize>, column:Vec<String>, head:&str) -> Vec<usize>{
+    let heads: Vec<&str> = rowsplit(head);
+    for onec in column{
+        let mut counter = 0;
+        for oneh in &heads{
+            if &onec == oneh{
+                number.push(counter);
+            }
+            counter+=1;
+        }
+    }
     return number;
 }
 
@@ -120,8 +130,7 @@ fn main() {
     
     let mut result:String = String::from("");
     if column.len() !=0 {
-        number = collectnum(number, column)
-        //number.push(0);
+        number = collectnum(number, column, lines[0]);
     }
     if number.len() !=0 {
         result = cleateresult(result, lines, number);

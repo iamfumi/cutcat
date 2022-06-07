@@ -189,4 +189,9 @@ mod tests {
         let head:&str = "A,B,C";
         assert_eq!(vec![0,1,2],collectnum(number, column, head))
     }
+    #[test]
+    fn test_readfile(){
+        let path_buf = PathBuf::from("./SalesData.csv");
+        assert_eq!("Products Name,2017,2018,2019,2020,2021\r\nA,35000,38000,46000,12000,36000\r\nB,9000,20000,23100,54300,12000\r\nC,42300,54300,43200,89100,123200",readfile(path_buf));
+    }
 }

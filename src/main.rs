@@ -170,4 +170,23 @@ mod tests {
         assert_eq!(vec![a,b], rowsplit(testnum));
         assert_eq!(vec![c,d], rowsplit(teststr));
     }
+    #[test]
+    fn test_returnline(){
+        let testreturn: &str = "1\n2";
+        let a: &str = "1";
+        let b: &str = "2";
+        let teststr: &str = "c\nd\ne";
+        let c: &str = "c";
+        let d: &str = "d";
+        let e: &str = "e";
+        assert_eq!(vec![a,b], returnline(testreturn));
+        assert_eq!(vec![c,d,e], returnline(teststr));
+    }
+    #[test]
+    fn test_collectnum(){
+        let mut number:Vec<usize> = vec![0];
+        let column:Vec<String> = vec!["B".to_string(),"C".to_string()];
+        let head:&str = "A,B,C";
+        assert_eq!(vec![0,1,2],collectnum(number, column, head))
+    }
 }

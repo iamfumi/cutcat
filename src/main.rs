@@ -159,6 +159,7 @@ mod tests {
         assert_eq!("Hello, World", hello(None));
         assert_eq!("Hello, Yamaguchi", hello(Some("Yamaguchi".to_string())));
     }
+    #[test]
     fn test_rowsplit(){
         let testnum: &str = "1,2";
         let teststr: &str = "c,d";

@@ -18,7 +18,7 @@ fn rowsplit(line:&str) -> Vec<&str> {
     return word;
 }
 
-fn cleateresult(mut result:String, lines: Vec<&str>, number:Vec<usize>) -> String{
+fn createresult(mut result:String, lines: Vec<&str>, number:Vec<usize>) -> String{
     let ll = lines.len();
     let mut cl = 0;
     for line in lines{
@@ -70,7 +70,7 @@ fn main() {
         number = collectnum(number, column, lines[0]);
     }
     if number.len() !=0 {
-        result = cleateresult(result, lines, number);
+        result = createresult(result, lines, number);
     }else{
         result = csvtext;
     }
@@ -130,5 +130,12 @@ mod tests {
     fn test_readfile(){
         let path_buf = PathBuf::from("./SalesData.csv");
         assert_eq!("Products Name,2017,2018,2019,2020,2021\r\nA,35000,38000,46000,12000,36000\r\nB,9000,20000,23100,54300,12000\r\nC,42300,54300,43200,89100,123200",readfile(path_buf));
+    }
+    #[test]
+    fn test_createresult(){
+        let mut result:String = String::from("");
+        let lines: Vec<&str> = vec!["a,b","c,d"];
+        let number:Vec<usize> = vec![0];
+        assert_eq!("a\nc",createresult(result, lines, number));
     }
 }

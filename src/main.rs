@@ -8,27 +8,10 @@ fn readfile(path_buf: PathBuf) -> String {
     return fs::read_to_string(path_buf).unwrap();
 }
 
-fn textsplit(text: &str) -> Vec<&str> {
-    let line :Vec<&str> = text.split('\n').collect();
-    let mut one: Vec<&str> = vec![];
-    for x in line{
-        // println!("{}", x);
-        let split_line :Vec<&str> = x.split(',').collect();
-        for splited in split_line{
-            one.push(splited);
-        }
-    }
-    return one;
-}
-
 fn returnline(text: &str) -> Vec<&str> {
     let line :Vec<&str> = text.split('\n').collect();
     return line;
 }
-
-// fn getcolmun(text: &str) -> Vec<&str> {
-
-// }
 
 fn rowsplit(line:&str) -> Vec<&str> {
     let word :Vec<&str> = line.split(',').collect();
@@ -74,30 +57,10 @@ fn collectnum(mut number:Vec<usize>, column:Vec<String>, head:&str) -> Vec<usize
 
 fn main() {
     let _opts = cli::Options::parse();
-    //let path_buf = PathBuf::from("testdata.csv");
     let path_buf = _opts.file;
     let csvtext = readfile(path_buf);
-    // println!("{}",csvtext);
     let str2: &str = &csvtext;
-    // println!("{}", str2);
-    let allsplited :Vec<&str> = textsplit(str2);
-    // println!("{},{}",test_string[0],test_string[1]);
-
-    // for z in allsplited{
-    //     println!("{}", z);
-    // }
-
-    // let row :Vec<&str> = rowsplit(str2, 1);
-    // println!("{},{}",row[0],row[1]);
-
     let column :Vec<String> = _opts.column;
-    // if column.len()==0{
-    //     println!("{}","None");
-    // }else{
-    //     for x in column{
-    //         println!("{}",x);
-    //     }
-    // }
     let lines :Vec<&str> = returnline(str2);
     let mut number :Vec<usize> = _opts.number;
     

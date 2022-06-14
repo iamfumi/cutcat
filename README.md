@@ -17,15 +17,18 @@ catコマンドでは，csvファイルの内容も手軽に確認できる．�
 ## Usage
 
 ```sh
-cutcat <OPTIONS>... <FILE>
-OPTIONS
-    -c, --column          列名を指定する
-    -n, --column-number   列番号を指定する
-    -t, --tab             入力ファイルがタブ区切りのcsvファイルの場合に指定する
-    -h, --help            このメッセージを表示する
+USAGE:
+    cutcat [OPTIONS] <File>
 
-ARGUMENTS
-    FILE                  対象となるcsvファイルのパス
+ARGS:
+    <File>    対象となるCSVファイルのパス
+
+OPTIONS:
+    -c, --column <column-Name>      Select Column Name
+    -h, --help                      Print help information
+    -n, --number <column-Number>    Select Column Number
+    -t, --tab                       Tab delimited csv file
+    -V, --version                   Print version information
     
 ```
 

@@ -11,25 +11,6 @@ use std::fs;
     about = "csvファイルの列を操作するためのcatコマンド機能拡張"
 )]
 
-struct Options {
-
-    /// Select Column Name
-    #[clap(short='c', long="column", value_name = "column-Name")]
-    column: Vec<String>,
-
-    /// Select Column Number
-    #[clap(short='n', long="number", value_name = "column-Number")]
-    number: Vec<usize>,
-
-    /// Tab delimited csv file
-    #[clap(short='t', long="tab")]
-    tab: bool,
-
-    /// Input CSV file
-    #[clap(value_name = "File", required = true, help = "対象となるCSVファイルのパス")]
-    file: PathBuf,
-}
-
 fn readfile(path_buf: PathBuf) -> String {
     return fs::read_to_string(path_buf).unwrap();
 }

@@ -2,14 +2,7 @@ use clap::Parser;
 use std::path::PathBuf;
 use std::fs;
 
-///csvファイルの列を操作するためのcatコマンド機能拡張 
-#[derive(Parser)]
-#[clap(
-    name = "cutcat",
-    author = "Fumiya YAMAGUCHI",
-    version = "0.1.2",
-    about = "csvファイルの列を操作するためのcatコマンド機能拡張"
-)]
+mod cli;
 
 fn readfile(path_buf: PathBuf) -> String {
     return fs::read_to_string(path_buf).unwrap();
@@ -80,7 +73,7 @@ fn collectnum(mut number:Vec<usize>, column:Vec<String>, head:&str) -> Vec<usize
 }
 
 fn main() {
-    let _opts = Options::parse();
+    let _opts = cli::Options::parse();
     //let path_buf = PathBuf::from("testdata.csv");
     let path_buf = _opts.file;
     let csvtext = readfile(path_buf);

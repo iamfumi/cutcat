@@ -14,4 +14,6 @@ clap = { version = "3.1.12", features = ["derive"] }
 
 [package.metadata.scripts]
     hello = "echo \"Hello World\""
-    site  = "hugo -s site"
+    coverage = "cargo llvm-cov --html; mkdir -p site/static/coverage; cp -r target/llvm-cov/html/* site/static/coverage/"
+    server = "hugo -s site server"
+    site = "hugo -s site"

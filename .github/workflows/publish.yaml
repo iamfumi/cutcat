@@ -1,4 +1,4 @@
-name: Publish Web Pages, and Docker Images
+name: publish_site_release_assets
 on:
   pull_request:
     branches:
@@ -6,16 +6,39 @@ on:
     types: [closed]
 
 jobs:
-  publish:
+  setup:
     runs-on: ubuntu-latest
     # ブランチ名が release/v から始まる場合のみに実行する．
     # プルリクエストがマージされた場合のみに実行する．
     if: startsWith(github.head_ref, 'release/v') && github.event.pull_request.merged == true
-    env:
-      REPO: https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git
+    outputs:
+      tag: ${{ steps.vars.outputs.tag }}
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
     steps:
+      - name: Git Tag name
+        id: vars
+        run: |
+          echo "GITHUB_HEAD_REF: $GITHUB_HEAD_REF (${GITHUB_HEAD_REF##*/v})"
+          echo "::set-output name=tag::${GITHUB_HEAD_REF##*/v}"
 
-# initialization
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.vars.outputs.tag }}
+          release_name: Release v${{ steps.vars.outputs.tag }}
+          draft: false
+          prerelease: false
+
+  site:
+    runs-on: ubuntu-latest
+    needs: setup
+    outputs:
+      tag: ${{ needs.setup.outputs.tag }}
+      upload_url: ${{ needs.setup.outputs.upload_url }}
+    steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -31,39 +54,120 @@ jobs:
           git submodule sync --recursive
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
           git worktree add site/public gh-pages
-      - name: Git Tag name
-        id: vars
-        run: |
-          HEAD_REF=${{ github.head_ref }}
-          echo "::set-output name=tag::${HEAD_REF##*/v}"
-# web page
-        # before relese it, must add gh-pages branch as a worktree, by the following command.
-        #     git switch --orphan gh-pages
-        #     git worktree add site/public gh-pages
-
-        # pandoc で README を html に変換する．とりあえず．
-      - name: Build Site
-        uses: docker://pandoc/core:2.9
+          
+      - uses: actions-rs/toolchain@v1
         with:
-          args: >-
-            --standalone
-            --output=site/public/index.html
-            --metadata title=btmeister
-            README.md
+          toolchain: stable
+          override: true
+          components: llvm-tools-preview
+
+      - name: Install cargo-llvm-cov
+        uses: taiki-e/install-action@cargo-llvm-cov
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.91.2'
+          extended: true
+
+      - name: Build site
+        run: |
+          cargo llvm-cov --html
+          mkdir -p site/static/coverage
+          cp -r target/llvm-cov/html/* site/static/coverage/
+          git submodule update --init
+          hugo -s site
+          rm site/public/favicon*
+
       - name: Deploy Site
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site/public
 
+  publish:
+    runs-on: ${{ matrix.os }}
+    needs: site
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+            artifact_name: cutcat
+            asset_name: cutcat-${{ needs.site.outputs.tag }}_linux_amd64
+          - os: ubuntu-latest
+            target: aarch64-unknown-linux-gnu
+            artifact_name: cutcat
+            asset_name: cutcat-${{ needs.site.outputs.tag }}_linux_arm64
+          - os: macOS-latest
+            target: x86_64-apple-darwin
+            artifact_name: cutcat
+            asset_name: cutcat-${{ needs.site.outputs.tag }}_darwin_amd64
+          - os: macOS-latest
+            target: aarch64-apple-darwin
+            artifact_name: cutcat
+            asset_name: cutcat-${{ needs.site.outputs.tag }}_darwin_arm64
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+            artifact_name: cutcat.exe
+            asset_name: cutcat-${{ needs.site.outputs.tag }}_windows_amd64
+          # - os: windows-latest
+          #   target: aarch64-pc-windows-msvc
+          #   artifact_name: cutcat.exe
+          #   asset_name: cutcat-${{ needs.site.outputs.tag }}_windows_arm64
+
+    steps:
+# initialization
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: main
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Initialize Git
+        shell: bash
+        run: |
+          git submodule update --init
+          git worktree add site/public gh-pages
+
+      - name: Setup variable
+        id: vars
+        shell: bash
+        run: |
+          rustup target list
+          DIR=$(echo "cutcat-${{ needs.site.outputs.tag }}")
+          echo "::set-output name=dir::$DIR"
+
+      - name: Cross build with all features
+        uses: actions-rs/cargo@v1
+        with:
+          use-cross: true 
+          command: build
+          args: --release --target ${{ matrix.target }} --all-features --verbose
+          
 # publish release
-      - name: Create release
-        id: create_release
-        uses: actions/create-release@v1.0.0
+      - name: Create release file
+        run: |
+          DIR=${{ steps.vars.outputs.dir }}
+          DIST=${{ matrix.target }}
+          mkdir -p dist/$DIST/$DIR
+          cp -r site/public dist/$DIST/$DIR/docs
+          cp -r README.md LICENSE target/completions target/${{ matrix.target }}/release/${{ matrix.artifact_name }} dist/$DIST/$DIR
+          tar cvfz dist/${{ matrix.asset_name }}.tar.gz -C dist/$DIST $DIR
+        shell: bash
+
+      - name: Upload release assets
+        id: upload-release-assets
+        uses: actions/upload-release-asset@v1.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ steps.vars.outputs.tag }}
-          release_name: Release v${{ steps.vars.outputs.tag }}
-          draft: false
-          prerelease: false
+          asset_path: dist/${{ matrix.asset_name }}.tar.gz
+          asset_name: ${{ matrix.asset_name }}.tar.gz
+          asset_content_type: application/x-gzip
+          upload_url: ${{ needs.site.outputs.upload_url }}

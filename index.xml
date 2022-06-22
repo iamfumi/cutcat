@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cutcat</title>
+    <link>https://iamfumi.github.io/cutcat/</link>
+    <description>Recent content on cutcat</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Jun 2022 16:53:30 +0900</lastBuildDate><atom:link href="https://iamfumi.github.io/cutcat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>https://iamfumi.github.io/cutcat/posts/my-first-post/</link>
+      <pubDate>Wed, 22 Jun 2022 16:53:30 +0900</pubDate>
+      
+      <guid>https://iamfumi.github.io/cutcat/posts/my-first-post/</guid>
+      <description>cutcat csvファイルの列を操作するためのcatコマンド機能拡張 Description catコマンドでは，csvファイルの内容も手軽に確認できる．また，cutコマンドではcsvファイルにおける指定した列を取り出すことができる． しかしながら，これら既存のコマンドでは，出力したい列が何列目かを把握している必要があり，ファイルが大きくなるにつれ把握が難しくなることから，コマンドラインではcsvファイルの列の扱いが難しくなる． そこで，cutcatでは，指定した列名の列のみを表示する機能を提供する．列名を直接指定できるようにすることで，SQLでデータベースを扱う際のような操作感を提供する．</description>
+    </item>
+    
+  </channel>
+</rss>

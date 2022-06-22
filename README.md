@@ -5,6 +5,7 @@
 [![Rust Report Card](https://rust-reportcard.xuri.me/badge/github.com/iamfumi/cutcat)](https://rust-reportcard.xuri.me/report/github.com/iamfumi/cutcat)
 
 [![License](https://img.shields.io/badge/License-MIT-green)](https://github.com/iamfumi/cutcat/blob/main/LICENSE)
+[![DOI](https://sandbox.zenodo.org/badge/483074563.svg)](https://sandbox.zenodo.org/badge/latestdoi/483074563)
 
 csvファイルの列を操作するためのcatコマンド機能拡張
 ![cutcat_logo](logo.png)

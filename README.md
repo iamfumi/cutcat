@@ -6,7 +6,7 @@
 
 [![Version](https://img.shields.io/badge/Version-v0.1.0-green)](https://github.com/iamfumi/cutcat/releases/tag/v0.1.0)
 [![Docker](https://img.shields.io/badge/Docker-v0.1.0-green?logo=docker)](https://github.com/iamfumi/cutcat/pkgs/container/cutcat/)
-[![Homebrew](https://img.shields.io/badge/Homebrew-iamfumi/brew/cutcat-green?logo=homebrew)](https://github.com/iamfumi/homebrew-brew)
+[![Homebrew](https://img.shields.io/badge/Homebrew-iamfumi/fm/cutcat-green?logo=homebrew)](https://github.com/iamfumi/homebrew-fm)
 
 [![License](https://img.shields.io/badge/License-MIT-green)](https://github.com/iamfumi/cutcat/blob/main/LICENSE)
 [![DOI](https://sandbox.zenodo.org/badge/483074563.svg)](https://sandbox.zenodo.org/badge/latestdoi/483074563)

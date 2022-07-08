@@ -1,19 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>cutcat</title>
     <link>https://iamfumi.github.io/cutcat/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on cutcat</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://iamfumi.github.io/cutcat/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>cutcat</title>
-      <link>https://iamfumi.github.io/cutcat/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>About</title>
+      <link>https://iamfumi.github.io/cutcat/about/</link>
+      <pubDate>Fri, 08 Jul 2022 20:10:23 +0900</pubDate>
       
-      <guid>https://iamfumi.github.io/cutcat/</guid>
-      <description> csvファイルの列を操作するためのcatコマンド機能拡張 Description catコマンドでは，csvファイルの内容も手軽に確認できる．また，cutコマンドではcsvファイルにおける指定した列を取り出すことができる． しかしながら，これら既存のコマンドでは，出力したい列が何列目かを把握している必要があり，ファイルが大きくなるにつれ把握が難しくなることから，コマンドラインではcsvファイルの列の扱いが難しくなる． そこで，cutcatでは，指定した列名の列のみを表示する機能を提供する．列名を直接指定できるようにすることで，SQLでデータベースを扱う際のような操作感を提供する．
-:books: Table of Contents :house: Home :speaking_head: Description :anchor: Install :runner: Usage :chart_with_upwards_trend: Coverage :smile: About </description>
+      <guid>https://iamfumi.github.io/cutcat/about/</guid>
+      <description>License Permissions :+1: Commercial use :+1: Modification :+1: Distribution :+1: Private use Limitations :x: Liability :x: Warranty Logo The logo of btmeister is as follows.
+This image is refered from freesvg.org by OpenClipart.
+Project Name cutcat cutcat is Simple &#39;cat&#39; to cut csv files from its features.
+Developers Fumiya Yamaguchi (@iamfumi) </description>
+    </item>
+    
+    <item>
+      <title>Usage</title>
+      <link>https://iamfumi.github.io/cutcat/usage/</link>
+      <pubDate>Mon, 04 Jul 2022 01:07:49 +0900</pubDate>
+      
+      <guid>https://iamfumi.github.io/cutcat/usage/</guid>
+      <description>CLI cutcat 0.1.0 Fumiya YAMAGUCHI cat command extension to manipulate columns in csv files USAGE: cutcat [OPTIONS] &amp;lt;File&amp;gt; ARGS: &amp;lt;File&amp;gt; 対象となるCSVファイルのパス OPTIONS: -c, --column &amp;lt;column-Name&amp;gt; Select Column Name -h, --help Print help information -n, --number &amp;lt;column-Number&amp;gt; Select Column Number -t, --tab Tab delimited csv file -V, --version Print version information Sample Output $ cutcat SalesData.csv Products Name, 2017, 2018, 2019, 2020, 2021 A, 35000, 38000, 46000, 12000, 36000 B, 9000, 20000, 23100, 54300, 12000 C, 42300, 54300, 43200, 89100, 123200 $ cutcat -c &amp;#34;2021&amp;#34; SalesData.</description>
+    </item>
+    
+    <item>
+      <title>Install</title>
+      <link>https://iamfumi.github.io/cutcat/install/</link>
+      <pubDate>Sun, 03 Jul 2022 18:20:54 +0900</pubDate>
+      
+      <guid>https://iamfumi.github.io/cutcat/install/</guid>
+      <description>:beer: Homebrew cutcat supports installation via Homebrew.
+$ brew tap iamfumi/fm $ brew install cutcat :muscle: Install yourself Clone the project from GitHub and compile it like follows.
+$ git clone https://github.com/iamfumi/cutcat.git $ cd cutcat $ cargo build --release Then, cargo build the resultant cutcat executable on target/release directory.</description>
     </item>
     
   </channel>

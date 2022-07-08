@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Usage | My New Hugo Site</title>
+    <title>Usage | cutcat</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="CLI cutcat 0.3.20 Fumiya YAMAGUCHI A tool for detecting build tools of the projects USAGE: cutcat [OPTIONS] [PROJECTs]... ARGS: &lt;PROJECTs&gt;... The target project directories for cutcat. OPTIONS: -@ &lt;INPUT&gt; Specify the file contains project path list. If INPUT is dash (&#39;-&#39;), read from STDIN. --append-defs &lt;DEFS_JSON&gt; Specify the additional definitions of the build tools. -d, --definition &lt;DEFS_JSON&gt; Specify the definition of the build tools. -f, --format &lt;FORMAT&gt; Specify the output format [default: default] [possible values: default, json, yaml, xml] -h, --help Print help information -L, --list-defs Print the build tools&#39; definition list --no-ignore Do not respect ignore files (.">
+    <meta name="description" content="CLI cutcat 0.1.0 Fumiya YAMAGUCHI cat command extension to manipulate columns in csv files USAGE: cutcat [OPTIONS] &lt;File&gt; ARGS: &lt;File&gt; 対象となるCSVファイルのパス OPTIONS: -c, --column &lt;column-Name&gt; Select Column Name -h, --help Print help information -n, --number &lt;column-Number&gt; Select Column Number -t, --tab Tab delimited csv file -V, --version Print version information Sample Output $ cutcat SalesData.csv Products Name, 2017, 2018, 2019, 2020, 2021 A, 35000, 38000, 46000, 12000, 36000 B, 9000, 20000, 23100, 54300, 12000 C, 42300, 54300, 43200, 89100, 123200 $ cutcat -c &#34;2021&#34; SalesData.">
     <meta name="generator" content="Hugo 0.101.0" />
     
     
@@ -16,7 +16,7 @@
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<link rel="stylesheet" href="/cutcat/ananke/css/main.min.css" >
 
 
 
@@ -30,19 +30,19 @@
     
     
     <meta property="og:title" content="Usage" />
-<meta property="og:description" content="CLI cutcat 0.3.20 Fumiya YAMAGUCHI A tool for detecting build tools of the projects USAGE: cutcat [OPTIONS] [PROJECTs]... ARGS: &lt;PROJECTs&gt;... The target project directories for cutcat. OPTIONS: -@ &lt;INPUT&gt; Specify the file contains project path list. If INPUT is dash (&#39;-&#39;), read from STDIN. --append-defs &lt;DEFS_JSON&gt; Specify the additional definitions of the build tools. -d, --definition &lt;DEFS_JSON&gt; Specify the definition of the build tools. -f, --format &lt;FORMAT&gt; Specify the output format [default: default] [possible values: default, json, yaml, xml] -h, --help Print help information -L, --list-defs Print the build tools&#39; definition list --no-ignore Do not respect ignore files (." />
+<meta property="og:description" content="CLI cutcat 0.1.0 Fumiya YAMAGUCHI cat command extension to manipulate columns in csv files USAGE: cutcat [OPTIONS] &lt;File&gt; ARGS: &lt;File&gt; 対象となるCSVファイルのパス OPTIONS: -c, --column &lt;column-Name&gt; Select Column Name -h, --help Print help information -n, --number &lt;column-Number&gt; Select Column Number -t, --tab Tab delimited csv file -V, --version Print version information Sample Output $ cutcat SalesData.csv Products Name, 2017, 2018, 2019, 2020, 2021 A, 35000, 38000, 46000, 12000, 36000 B, 9000, 20000, 23100, 54300, 12000 C, 42300, 54300, 43200, 89100, 123200 $ cutcat -c &#34;2021&#34; SalesData." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/usage/" /><meta property="article:section" content="" />
+<meta property="og:url" content="https://iamfumi.github.io/cutcat/usage/" /><meta property="article:section" content="" />
 <meta property="article:published_time" content="2022-07-04T01:07:49+09:00" />
 <meta property="article:modified_time" content="2022-07-04T01:07:49+09:00" />
 
 <meta itemprop="name" content="Usage">
-<meta itemprop="description" content="CLI cutcat 0.3.20 Fumiya YAMAGUCHI A tool for detecting build tools of the projects USAGE: cutcat [OPTIONS] [PROJECTs]... ARGS: &lt;PROJECTs&gt;... The target project directories for cutcat. OPTIONS: -@ &lt;INPUT&gt; Specify the file contains project path list. If INPUT is dash (&#39;-&#39;), read from STDIN. --append-defs &lt;DEFS_JSON&gt; Specify the additional definitions of the build tools. -d, --definition &lt;DEFS_JSON&gt; Specify the definition of the build tools. -f, --format &lt;FORMAT&gt; Specify the output format [default: default] [possible values: default, json, yaml, xml] -h, --help Print help information -L, --list-defs Print the build tools&#39; definition list --no-ignore Do not respect ignore files (."><meta itemprop="datePublished" content="2022-07-04T01:07:49+09:00" />
+<meta itemprop="description" content="CLI cutcat 0.1.0 Fumiya YAMAGUCHI cat command extension to manipulate columns in csv files USAGE: cutcat [OPTIONS] &lt;File&gt; ARGS: &lt;File&gt; 対象となるCSVファイルのパス OPTIONS: -c, --column &lt;column-Name&gt; Select Column Name -h, --help Print help information -n, --number &lt;column-Number&gt; Select Column Number -t, --tab Tab delimited csv file -V, --version Print version information Sample Output $ cutcat SalesData.csv Products Name, 2017, 2018, 2019, 2020, 2021 A, 35000, 38000, 46000, 12000, 36000 B, 9000, 20000, 23100, 54300, 12000 C, 42300, 54300, 43200, 89100, 123200 $ cutcat -c &#34;2021&#34; SalesData."><meta itemprop="datePublished" content="2022-07-04T01:07:49+09:00" />
 <meta itemprop="dateModified" content="2022-07-04T01:07:49+09:00" />
-<meta itemprop="wordCount" content="182">
+<meta itemprop="wordCount" content="163">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Usage"/>
-<meta name="twitter:description" content="CLI cutcat 0.3.20 Fumiya YAMAGUCHI A tool for detecting build tools of the projects USAGE: cutcat [OPTIONS] [PROJECTs]... ARGS: &lt;PROJECTs&gt;... The target project directories for cutcat. OPTIONS: -@ &lt;INPUT&gt; Specify the file contains project path list. If INPUT is dash (&#39;-&#39;), read from STDIN. --append-defs &lt;DEFS_JSON&gt; Specify the additional definitions of the build tools. -d, --definition &lt;DEFS_JSON&gt; Specify the definition of the build tools. -f, --format &lt;FORMAT&gt; Specify the output format [default: default] [possible values: default, json, yaml, xml] -h, --help Print help information -L, --list-defs Print the build tools&#39; definition list --no-ignore Do not respect ignore files (."/>
+<meta name="twitter:description" content="CLI cutcat 0.1.0 Fumiya YAMAGUCHI cat command extension to manipulate columns in csv files USAGE: cutcat [OPTIONS] &lt;File&gt; ARGS: &lt;File&gt; 対象となるCSVファイルのパス OPTIONS: -c, --column &lt;column-Name&gt; Select Column Name -h, --help Print help information -n, --number &lt;column-Number&gt; Select Column Number -t, --tab Tab delimited csv file -V, --version Print version information Sample Output $ cutcat SalesData.csv Products Name, 2017, 2018, 2019, 2020, 2021 A, 35000, 38000, 46000, 12000, 36000 B, 9000, 20000, 23100, 54300, 12000 C, 42300, 54300, 43200, 89100, 123200 $ cutcat -c &#34;2021&#34; SalesData."/>
 
 	
   </head>
@@ -55,9 +55,9 @@
     <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+    <a href="/cutcat/" class="f3 fw2 hover-white no-underline white-90 dib">
       
-        My New Hugo Site
+        cutcat
       
     </a>
     <div class="flex-l items-center">
@@ -88,61 +88,54 @@
       </header>
       <div class="nested-copy-line-height lh-copy f4 nested-links mid-gray">
         <h2 id="cli">CLI</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cutcat 0.3.20
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cutcat 0.1.0
 </span></span><span style="display:flex;"><span>Fumiya YAMAGUCHI
-</span></span><span style="display:flex;"><span>A tool <span style="color:#66d9ef">for</span> detecting build tools of the projects
+</span></span><span style="display:flex;"><span>cat command extension to manipulate columns in csv files
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>USAGE:
-</span></span><span style="display:flex;"><span>    cutcat <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>PROJECTs<span style="color:#f92672">]</span>...
+</span></span><span style="display:flex;"><span>    cutcat <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> &lt;File&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>ARGS:
-</span></span><span style="display:flex;"><span>    &lt;PROJECTs&gt;...    The target project directories <span style="color:#66d9ef">for</span> cutcat.
+</span></span><span style="display:flex;"><span>    &lt;File&gt;    対象となるCSVファイルのパス
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>OPTIONS:
-</span></span><span style="display:flex;"><span>    -@ &lt;INPUT&gt;                       Specify the file contains project path list. If INPUT is dash
-</span></span><span style="display:flex;"><span>                                     <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">)</span>, read from STDIN.
-</span></span><span style="display:flex;"><span>        --append-defs &lt;DEFS_JSON&gt;    Specify the additional definitions of the build tools.
-</span></span><span style="display:flex;"><span>    -d, --definition &lt;DEFS_JSON&gt;     Specify the definition of the build tools.
-</span></span><span style="display:flex;"><span>    -f, --format &lt;FORMAT&gt;            Specify the output format <span style="color:#f92672">[</span>default: default<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>possible values:
-</span></span><span style="display:flex;"><span>                                     default, json, yaml, xml<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>    -h, --help                       Print help information
-</span></span><span style="display:flex;"><span>    -L, --list-defs                  Print the build tools<span style="color:#960050;background-color:#1e0010">&#39;</span> definition list
-</span></span><span style="display:flex;"><span>        --no-ignore                  Do not respect ignore files <span style="color:#f92672">(</span>.ignore, .gitignore, etc.<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    -V, --version                    Print version information
+</span></span><span style="display:flex;"><span>    -c, --column &lt;column-Name&gt;      Select Column Name
+</span></span><span style="display:flex;"><span>    -h, --help                      Print help information
+</span></span><span style="display:flex;"><span>    -n, --number &lt;column-Number&gt;    Select Column Number
+</span></span><span style="display:flex;"><span>    -t, --tab                       Tab delimited csv file
+</span></span><span style="display:flex;"><span>    -V, --version                   Print version information
+</span></span><span style="display:flex;"><span>    
 </span></span></code></pre></div><h3 id="sample-output">Sample Output</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ cutcat . ~/go/src/github.com/iamfumi/rrh
-</span></span><span style="display:flex;"><span>cargo       ./Cargo.toml
-</span></span><span style="display:flex;"><span>make        /Users/iamfumi/go/src/github.com/iamfumi/rrh/Makefile
-</span></span><span style="display:flex;"><span>$ cutcat --format json . ~/go/src/github.com/iamfumi/rrh | jq .
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;project&#34;</span>:<span style="color:#e6db74">&#34;cutcat&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;path&#34;</span>:<span style="color:#e6db74">&#34;./&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;build-tools&#34;</span>:<span style="color:#f92672">[</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;file-name&#34;</span>:<span style="color:#e6db74">&#34;Cargo.toml&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;tool-name&#34;</span>:<span style="color:#e6db74">&#34;cargo&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;project&#34;</span>:<span style="color:#e6db74">&#34;rrh&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;path&#34;</span>:<span style="color:#e6db74">&#34;/Usrs/iamfumi/go/src/github.com/iamfumi/rrh&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;build-tools&#34;</span>:<span style="color:#f92672">[</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;file-name&#34;</span>:<span style="color:#e6db74">&#34;Makefile&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;tool-name&#34;</span>:<span style="color:#e6db74">&#34;make&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ cutcat SalesData.csv
+</span></span><span style="display:flex;"><span>Products Name, 2017, 2018, 2019, 2020, <span style="color:#ae81ff">2021</span>
+</span></span><span style="display:flex;"><span>A, 35000, 38000, 46000, 12000, <span style="color:#ae81ff">36000</span>
+</span></span><span style="display:flex;"><span>B, 9000, 20000, 23100, 54300, <span style="color:#ae81ff">12000</span>
+</span></span><span style="display:flex;"><span>C, 42300, 54300, 43200, 89100, <span style="color:#ae81ff">123200</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ cutcat -c <span style="color:#e6db74">&#34;2021&#34;</span> SalesData.csv
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2021</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">36000</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">12000</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">123200</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ cutcat -c <span style="color:#e6db74">&#34;Products Name&#34;</span> -c <span style="color:#e6db74">&#34;2021&#34;</span> SalesData.csv
+</span></span><span style="display:flex;"><span>Products Name, <span style="color:#ae81ff">2021</span>
+</span></span><span style="display:flex;"><span>A, <span style="color:#ae81ff">36000</span>
+</span></span><span style="display:flex;"><span>B, <span style="color:#ae81ff">12000</span>
+</span></span><span style="display:flex;"><span>C, <span style="color:#ae81ff">123200</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ cutcat -n <span style="color:#ae81ff">0</span> -n <span style="color:#ae81ff">4</span> -n <span style="color:#ae81ff">5</span> SalesData.csv
+</span></span><span style="display:flex;"><span>Products Name, 2020, <span style="color:#ae81ff">2021</span>
+</span></span><span style="display:flex;"><span>A, 12000, <span style="color:#ae81ff">36000</span>
+</span></span><span style="display:flex;"><span>B, 54300, <span style="color:#ae81ff">12000</span>
+</span></span><span style="display:flex;"><span>C, 89100, <span style="color:#ae81ff">123200</span>
 </span></span></code></pre></div><h2 id="whale-docker">:whale: Docker</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker run --rm -it -v $PWD:/home/cutcat ghcr.io/iamfumi/cutcat:latest
 </span></span></code></pre></div><p>The working directory in the docker container is <code>/home/cutcat</code>.
 The target project should be on the directory with <code>-v</code> flag of docker.</p>
 <h3 id="available-versions">Available versions</h3>
 <ul>
-<li><code>0.3.19</code>, <code>latest</code></li>
+<li><code>0.1.2</code>, <code>latest</code></li>
 </ul>
 
       </div>
@@ -152,8 +145,8 @@ The target project should be on the directory with <code>-v</code> flag of docke
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
-    &copy;  My New Hugo Site 2022 
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://iamfumi.github.io/cutcat/" >
+    &copy;  cutcat 2022 
   </a>
     <div>
 <div class="ananke-socials">

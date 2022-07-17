@@ -1,133 +1,261 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>cutcat | cutcat</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="">
-    <meta name="generator" content="Hugo 0.101.0" />
-    
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
+<html><meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    
-<link rel="stylesheet" href="/cutcat/ananke/css/main.min.css" >
+<title>cutcat - cat command extension to manipulate columns in csv files</title>
 
 
+  <link rel="shortcut icon" href="https://iamfumi.github.io/cutcat/favicon.ico" type="image/png"
+/>
 
-    
-    
-    
-      
 
-    
+  <meta name="description" content="cutcat - cat command extension to manipulate columns in csv file"
+/>
 
-    
-    
-      <link href="/cutcat/index.xml" rel="alternate" type="application/rss+xml" title="cutcat" />
-      <link href="/cutcat/index.xml" rel="feed" type="application/rss+xml" title="cutcat" />
-      
-    
-    
-    <meta property="og:title" content="cutcat" />
-<meta property="og:description" content="" />
+  <meta name="keywords" content="some, keywords, for, seo, you, know, google, duckduckgo, and, such"
+/>
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="stylesheet" href="https://iamfumi.github.io/cutcat/css/screen.css" />
+<link rel="stylesheet" href="https://iamfumi.github.io/cutcat/css/fonts.css" type="text/css" />
+<link
+  rel="stylesheet"
+  href="https://iamfumi.github.io/cutcat/fork-awesome/css/fork-awesome.min.css"
+  type="text/css"
+/>
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="cutcat - cat command extension to manipulate columns in csv file" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://iamfumi.github.io/cutcat/" />
+<meta property="og:url" content="https://iamfumi.github.io/cutcat/" /><meta property="og:image" content="https://iamfumi.github.io/cutcat/images/cover-image.jpg"/><meta property="og:site_name" content="cutcat - cat command extension to manipulate columns in csv files" />
 
-<meta itemprop="name" content="cutcat">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="cutcat"/>
-<meta name="twitter:description" content=""/>
 
-	
-  </head>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://iamfumi.github.io/cutcat/images/cover-image.jpg"/>
 
-  <body class="ma0 avenir bg-near-white">
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="cutcat - cat command extension to manipulate columns in csv file"/>
 
+<meta itemprop="name" content="">
+<meta itemprop="description" content="cutcat - cat command extension to manipulate columns in csv file">
+
+
+<body>
+
+
+
+<header id="site-head" style="background-image: url(images/cover-image.jpg)">
+    <div class="vertical">
+        <div id="site-head-content" class="inner">
+
+            <h1 class="blog-title">cutcat</h1>
+            <h2 class="blog-description">cat command extension to manipulate columns in csv files</h2>
+
+            
+                 <a class='btn site-menu' data-title-anchor='cutcat'>cutcat</a>
+            
+                 <a class='btn site-menu' data-title-anchor='install'>Install</a>
+            
+                 <a class='btn site-menu' data-title-anchor='usage'>Usage</a>
+            
+                 <a class='btn site-menu' data-title-anchor='coverage'>Coverage</a>
+            
+                 <a class='btn site-menu' data-title-anchor='about'>About</a>
+            
+            <i id='header-arrow' class="fa fa-angle-down"></i>
+        </div>
+    </div>
+</header>
+<main class="content" role="main">
+
+    <div class='fixed-nav'>
+    </div>
     
-
-  <header>
-    <div class="pb3-m pb6-l bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/cutcat/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        cutcat
-      
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-      
-<div class="ananke-socials">
-  
-</div>
-
-    </div>
-  </div>
-</nav>
-
-      <div class="tc-l pv3 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          cutcat
-        </h1>
-        
-      </div>
-    </div>
-  </header>
-
-
-    <main class="pb7" role="main">
-      
- <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-    <p><a href="https://coveralls.io/github/iamfumi/cutcat?branch=main"><img src="https://coveralls.io/repos/github/iamfumi/cutcat/badge.svg?branch=main" alt="Coverage Status"></a>
+        <div class='post-holder'>
+            <article id='cutcat' class='post first '>
+                <header class="post-header">
+                    <h2 class="post-title">cutcat</h2>
+                </header>
+                <section class="post-content">
+                    <p><a href="https://coveralls.io/github/iamfumi/cutcat?branch=main"><img src="https://coveralls.io/repos/github/iamfumi/cutcat/badge.svg?branch=main" alt="Coverage Status"></a>
 <a href="https://github.com/iamfumi/cutcat/actions/workflows/build.yaml"><img src="https://github.com/iamfumi/cutcat/actions/workflows/build.yaml/badge.svg" alt="build"></a>
 <a href="https://rust-reportcard.xuri.me/report/github.com/iamfumi/cutcat"><img src="https://rust-reportcard.xuri.me/badge/github.com/iamfumi/cutcat" alt="Rust Report Card"></a></p>
 <p><a href="https://github.com/iamfumi/cutcat/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green" alt="License"></a>
 <a href="https://sandbox.zenodo.org/badge/latestdoi/483074563"><img src="https://sandbox.zenodo.org/badge/483074563.svg" alt="DOI"></a></p>
 <p>csvファイルの列を操作するためのcatコマンド機能拡張
-<img src="logo.png" alt="cutcat_logo"></p>
+<img src="./logo.png" alt="cutcat_logo"></p>
 <h2 id="description">Description</h2>
-<p>catコマンドでは，csvファイルの内容も手軽に確認できる．また，cutコマンドではcsvファイルにおける指定した列を取り出すことができる．
-しかしながら，これら既存のコマンドでは，出力したい列が何列目かを把握している必要があり，ファイルが大きくなるにつれ把握が難しくなることから，コマンドラインではcsvファイルの列の扱いが難しくなる．
-そこで，cutcatでは，指定した列名の列のみを表示する機能を提供する．列名を直接指定できるようにすることで，SQLでデータベースを扱う際のような操作感を提供する．</p>
-<h2 id="table-of-contents">Table of Contents</h2>
+<p>catコマンドでは，csvファイルの内容も手軽に確認できる．また，cutコマンドではcsvファイルにおける指定した列を取り出すことができます．
+しかしながら，これら既存のコマンドでは，出力したい列が何列目かを把握している必要があり，ファイルが大きくなるにつれ把握が難しくなることから，コマンドラインではcsvファイルの列の扱いが難しくなります．
+そこで，cutcatでは，指定した列名の列のみを表示する機能を提供します．列名を直接指定できるようにすることで，SQLでデータベースを扱う際のような操作感を提供します．</p>
+
+                </section>
+            </article>
+            <div class='post-after'></div>
+        </div>
+    
+        <div class='post-holder'>
+            <article id='install' class='post  '>
+                <header class="post-header">
+                    <h2 class="post-title">Install</h2>
+                </header>
+                <section class="post-content">
+                    <h3 id="homebrew">Homebrew</h3>
+<p><code>cutcat</code> supports installation via <a href="https://brew.sh/">Homebrew</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ brew tap iamfumi/fm
+</span></span><span style="display:flex;"><span>$ brew install cutcat
+</span></span></code></pre></div><h3 id="install-yourself">Install yourself</h3>
+<p>Clone the project from GitHub and compile it like follows.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ git clone https://github.com/iamfumi/cutcat.git
+</span></span><span style="display:flex;"><span>$ cd cutcat
+</span></span><span style="display:flex;"><span>$ cargo build --release
+</span></span></code></pre></div><p>Then, <code>cargo</code> build the resultant <code>cutcat</code> executable on <code>target/release</code> directory.</p>
+
+                </section>
+            </article>
+            <div class='post-after'></div>
+        </div>
+    
+        <div class='post-holder'>
+            <article id='usage' class='post  '>
+                <header class="post-header">
+                    <h2 class="post-title">Usage</h2>
+                </header>
+                <section class="post-content">
+                    <h2 id="cli">CLI</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cutcat 0.1.2
+</span></span><span style="display:flex;"><span>Fumiya YAMAGUCHI
+</span></span><span style="display:flex;"><span>cat command extension to manipulate columns in csv files
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>USAGE:
+</span></span><span style="display:flex;"><span>    cutcat <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> &lt;File&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ARGS:
+</span></span><span style="display:flex;"><span>    &lt;File&gt;    対象となるCSVファイルのパス
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>OPTIONS:
+</span></span><span style="display:flex;"><span>    -c, --column &lt;column-Name&gt;      Select Column Name
+</span></span><span style="display:flex;"><span>    -h, --help                      Print help information
+</span></span><span style="display:flex;"><span>    -n, --number &lt;column-Number&gt;    Select Column Number
+</span></span><span style="display:flex;"><span>    -t, --tab                       Tab delimited csv file
+</span></span><span style="display:flex;"><span>    -V, --version                   Print version information
+</span></span><span style="display:flex;"><span>    
+</span></span></code></pre></div><h3 id="sample-output">Sample Output</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ cutcat SalesData.csv
+</span></span><span style="display:flex;"><span>Products Name, 2017, 2018, 2019, 2020, <span style="color:#ae81ff">2021</span>
+</span></span><span style="display:flex;"><span>A, 35000, 38000, 46000, 12000, <span style="color:#ae81ff">36000</span>
+</span></span><span style="display:flex;"><span>B, 9000, 20000, 23100, 54300, <span style="color:#ae81ff">12000</span>
+</span></span><span style="display:flex;"><span>C, 42300, 54300, 43200, 89100, <span style="color:#ae81ff">123200</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ cutcat -c <span style="color:#e6db74">&#34;2021&#34;</span> SalesData.csv
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2021</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">36000</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">12000</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">123200</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ cutcat -c <span style="color:#e6db74">&#34;Products Name&#34;</span> -c <span style="color:#e6db74">&#34;2021&#34;</span> SalesData.csv
+</span></span><span style="display:flex;"><span>Products Name, <span style="color:#ae81ff">2021</span>
+</span></span><span style="display:flex;"><span>A, <span style="color:#ae81ff">36000</span>
+</span></span><span style="display:flex;"><span>B, <span style="color:#ae81ff">12000</span>
+</span></span><span style="display:flex;"><span>C, <span style="color:#ae81ff">123200</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ cutcat -n <span style="color:#ae81ff">0</span> -n <span style="color:#ae81ff">4</span> -n <span style="color:#ae81ff">5</span> SalesData.csv
+</span></span><span style="display:flex;"><span>Products Name, 2020, <span style="color:#ae81ff">2021</span>
+</span></span><span style="display:flex;"><span>A, 12000, <span style="color:#ae81ff">36000</span>
+</span></span><span style="display:flex;"><span>B, 54300, <span style="color:#ae81ff">12000</span>
+</span></span><span style="display:flex;"><span>C, 89100, <span style="color:#ae81ff">123200</span>
+</span></span></code></pre></div><h2 id="docker">Docker</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker run --rm -it -v $PWD:/home/cutcat ghcr.io/iamfumi/cutcat:latest
+</span></span></code></pre></div><p>The working directory in the docker container is <code>/home/cutcat</code>.
+The target project should be on the directory with <code>-v</code> flag of docker.</p>
+<h3 id="available-versions">Available versions</h3>
 <ul>
-<li><a href="./">Home</a></li>
-<li><a href="install">Install</a></li>
-<li><a href="usage">Usage</a></li>
-<li><a href="coverage">Coverage</a></li>
-<li><a href="about">About</a></li>
+<li><code>0.1.2</code>, <code>latest</code></li>
 </ul>
 
-  </article>
-  
-  
-  
-  
-  
-  
-  
+                </section>
+            </article>
+            <div class='post-after'></div>
+        </div>
+    
+        <div class='post-holder'>
+            <article id='coverage' class='post  '>
+                <header class="post-header">
+                    <h2 class="post-title">Coverage</h2>
+                </header>
+                <section class="post-content">
+                    <p>カバレッジは以下のリンクで確認できます．</p>
+<ul>
+<li><a href="./coverage/index.html">Coverage</a></li>
+</ul>
 
-    </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://iamfumi.github.io/cutcat/" >
-    &copy;  cutcat 2022 
-  </a>
-    <div>
-<div class="ananke-socials">
-  
-</div>
-</div>
+                </section>
+            </article>
+            <div class='post-after'></div>
+        </div>
+    
+        <div class='post-holder'>
+            <article id='about' class='post  last'>
+                <header class="post-header">
+                    <h2 class="post-title">About</h2>
+                </header>
+                <section class="post-content">
+                    <h2 id="license">License</h2>
+<p><a href="https://github.com/iamfumi/cutcat/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green" alt="License"></a></p>
+<ul>
+<li>Permissions
+<ul>
+<li>Commercial use</li>
+<li>Modification</li>
+<li>Distribution</li>
+<li>Private use</li>
+</ul>
+</li>
+<li>Limitations
+<ul>
+<li>Liability</li>
+<li>Warranty</li>
+</ul>
+</li>
+</ul>
+<h2 id="logo">Logo</h2>
+<p>The logo of cutcat is as follows.</p>
+<p><img src="./logo.png" alt="cutcat_logo"></p>
+<p>This image is refered from <a href="https://freesvg.org/worker-with-tool">freesvg.org</a> by <a href="https://freesvg.org/by/OpenClipart">OpenClipart</a>.</p>
+<h2 id="project-name-cutcat">Project Name <code>cutcat</code></h2>
+<p><code>cutcat</code> is <code>Simple 'cat' to cut csv files</code> from its features.</p>
+<h2 id="developers">Developers</h2>
+<ul>
+<li><a href="https://github.com/iamfumi">Fumiya Yamaguchi</a> (<a href="https://github.com/iamfumi">@iamfumi</a>)</li>
+</ul>
+
+                </section>
+            </article>
+            <div class='post-after'></div>
+        </div>
+    
+</main>
+<footer class="site-footer">
+  <div class="inner">
+    
+      <section class="copyright">© 2022 Fumiya Yamaguchi</section>
+
+
+    <section></section>
+    
+
   </div>
 </footer>
 
-  </body>
+    <script type="text/javascript" src='https://iamfumi.github.io/cutcat/js/jquery-1.11.3.min.js'></script>
+
+    
+    <script type="text/javascript" src='https://iamfumi.github.io/cutcat/js/icons.js'></script>
+    <script type="text/javascript" src='https://iamfumi.github.io/cutcat/js/index.js'></script>
+    
+</body>
 </html>
